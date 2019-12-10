@@ -129,4 +129,4 @@ See [logback](https://logback.qos.ch/documentation.html) documentation for more 
 
 ## License
 
-[The MIT License](LICENSE.md)
+[Apache License, Version 2.0](LICENSE.md)

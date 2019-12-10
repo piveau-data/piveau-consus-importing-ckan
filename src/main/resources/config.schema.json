@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://io.piveau/resources/importing-ckan/config.schema.json",
+  "title": "importing-ckan configuration",
+  "description": "piveau pipe segment config object schema",
+  "type": "object",
+  "required": [ "address", "catalogue" ],
+  "properties": {
+    "address": {
+      "type": "string",
+      "title": "The source address to import from"
+    },
+    "catalogue": {
+      "type": "string",
+      "title": "The target catalogue id"
+    },
+    "dialect": {
+      "enum": [ "ckan", "dkan" ],
+      "title": "The API dialect to use",
+      "default": "ckan"
+    },
+    "pageSize": {
+      "type": "integer",
+      "title": "The page size",
+      "minimum": 1,
+      "default": 100
+    },
+    "incremental": {
+      "type": "boolean",
+      "title": "Incremental importing",
+      "default": false
+    },
+    "filters": {
+      "type": "object",
+      "title": "Map of key value pairs to add as filters",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sendListDelay": {
+      "type": "integer",
+      "title": "The delay before sending the identifier list"
+    },
+    "sendHash": {
+      "type": "boolean",
+      "title": "Generating and sending a hash value",
+      "default": false
+    },
+    "pulse": {
+      "type": "integer",
+      "title": "The pulse to emmit datasets into the pipe"
+    }
+  }
+}
